@@ -1,10 +1,12 @@
 # Docker Help
 Docker commands
 
-Ver la versión de docker instalada
+Show docker version
 
     $ docker version
 
-Ejecutar un contenedor
+Creating and running a container from an image
 
-    $ docker run 'container name'
+    $ docker run <image name>
+
+
