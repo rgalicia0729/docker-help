@@ -40,3 +40,17 @@ Removing stopped containers
 Get logs from a container
 
     $ docker logs <container id>
+
+Stop a container (SIGTERM)
+
+    $ docker stop <container id>
+
+Kill a container (SIGKILL)
+
+    $ docker kill <container id>
+
+Execute an additional command in a container
+
+    $ docker exec -it <container id> <command>
+
+    $ docker run -it <image name> <command>
