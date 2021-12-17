@@ -54,3 +54,25 @@ Execute an additional command in a container
     $ docker exec -it <container id> <command>
 
     $ docker run -it <image name> <command>
+
+## Building custom images
+
+create a file called Dockerfile, For this example we will create a redis image from scratch, adding the configuration that is presented below.
+
+    # Use an existing docker image as a base
+    FROM alpine
+
+    # Download and install a dependency
+    RUN apk add --update redis
+
+    # Tell the image what to do when it starts as a contain
+    CMD ["redis-server"]
+
+Build an image
+
+    $ docker build .
+
+Tagging an image
+
+    $ docker build -t <docker_id/repo_project_name:version> .
+    
