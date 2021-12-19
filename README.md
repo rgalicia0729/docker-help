@@ -75,4 +75,3 @@ Build an image
 Tagging an image
 
     $ docker build -t <docker_id/repo_project_name:version> .
-    
