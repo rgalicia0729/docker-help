@@ -55,6 +55,10 @@ Execute an additional command in a container
 
     $ docker run -it <image name> <command>
 
+Docker run with port mapping
+
+    $ docker run -p <port localhost>:<port container> <image id|name>
+
 ## Building custom images
 
 create a file called Dockerfile, For this example we will create a redis image from scratch, adding the configuration that is presented below.
