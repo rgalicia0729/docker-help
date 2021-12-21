@@ -1,19 +1,36 @@
 const express = require('express');
-const redis = require('redis');
+const mongoose = require('mongoose');
 
 const app = express();
-const redisClient = redis.createClient({
-  host: 'redis-server',
-  port: 6379
-});
-redisClient.set('visits', 0);
 
-app.get('/', (_, res) => {
-  redisClient.get('visits', (_, visits) => {
-    res.send(`Number of visits is ${visits}`);
-    redisClient.set('visits', visits + 1);
-  });
+(async () => {
+  await mongoose.connect('mongodb://mongodb-server:27017/visits');
+})();
+
+const countSchema = new mongoose.Schema({
+  key: String,
+  value: Number
 });
+
+const CountVisit = mongoose.model('counts', countSchema);
+
+app.get('/', async (_, res) => {
+  const countVisit = await CountVisit.findOne({ key: 'visits' });
+
+  if (!countVisit) {
+    const countVisit = new CountVisit({
+      key: 'visits',
+      value: 1
+    });
+    await countVisit.save();
+  } else {
+    await CountVisit.updateOne({ key: 'visits' }, { value: countVisit ? countVisit.value + 1 : 0 });
+  }
+
+
+  res.send(`Number of visits ${countVisit ? countVisit.value : 0}`)
+});
+
 
 app.listen(3000, () => {
   console.log('Listening on port 3000');

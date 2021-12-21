@@ -79,3 +79,17 @@ Build an image
 Tagging an image
 
     $ docker build -t <docker_id/repo_project_name:version> .
+
+## Docker compose
+
+Launch in background
+
+    $ docker-compose up -d
+
+Stop containers
+
+    $ docker-compose down
+
+Containers status with docker compose
+
+    $ docker-compose ps
