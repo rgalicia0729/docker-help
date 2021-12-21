@@ -19,6 +19,18 @@ Creating and running a container from an image
 
     $ docker run <image name>
 
+Get more information about the container
+
+    $ docker inspect <container id>
+
+Add a name to the container
+
+    $ docker run --name <container name> <image name>
+
+Rename the container
+
+    $ docker rename <current name> <new name>
+
 Default command override
 
     $ docker run <image name> command!
@@ -33,9 +45,13 @@ List all containers created
 
     $ docker ps -a
 
+Remove a container
+
+    $ docker rm <container id | name>
+
 Removing stopped containers
 
-    $ docker system prune
+    $ docker container prune
 
 Get logs from a container
 
