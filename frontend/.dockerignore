@@ -1,0 +1,7 @@
+mode_modules
+build
+
+.dockerignore
+Dockerfile
+Dockerfile.dev
+README.md

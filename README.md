@@ -55,7 +55,11 @@ Removing stopped containers
 
 Get logs from a container
 
-    $ docker logs <container id>
+    $ docker logs <container id | name>
+
+    $ docker logs -f <container id | name>
+
+    $ docker logs --tail <number of lines> -f <container id | name>
 
 Stop a container (SIGTERM)
 
@@ -91,6 +95,10 @@ create a file called Dockerfile, For this example we will create a redis image f
 Build an image
 
     $ docker build .
+
+Build an dev image
+
+    $ docker build -f <Dockerfile.dev> .
 
 Tagging an image
 
