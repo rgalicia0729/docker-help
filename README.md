@@ -79,6 +79,32 @@ Docker run with port mapping
 
     $ docker run -p <port localhost>:<port container> <image id|name>
 
+Docker bind mounts
+
+    $ docker run -v <route on my machine>:<path in container> <image id | name>
+
+    $ docker run --name db -v $(pwd):/data/db -d mongo
+
+Show the list of volumes
+
+    $ docker volume ls
+
+Create a new volume
+
+    $ docker volume create <volume name>
+
+Mount a volume in a container
+
+    $ docker run --mount src=<volume name>,dst=<destination path> <image id | name>
+
+Copy a file from the machine to the container
+
+    $ docker cp <local file name> <container name>:<container address>/<container file name>
+
+Extract a file from the container to the machine
+
+    $ docker cp <container name>:<container address>/<container file name> <local file name>
+
 ## Building custom images
 
 create a file called Dockerfile, For this example we will create a redis image from scratch, adding the configuration that is presented below.
