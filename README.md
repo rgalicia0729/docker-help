@@ -105,7 +105,13 @@ Extract a file from the container to the machine
 
     $ docker cp <container name>:<container address>/<container file name> <local file name>
 
-## Building custom images
+List the images
+
+    $ docker image ls
+
+Pull an image from the repository
+
+    $ docker pull <image name>:<tag>
 
 create a file called Dockerfile, For this example we will create a redis image from scratch, adding the configuration that is presented below.
 
@@ -129,6 +135,24 @@ Build an dev image
 Tagging an image
 
     $ docker build -t <docker_id/repo_project_name:version> .
+
+Retagge an image
+
+    $ docker tag <current tag> <new tag>
+
+Push an image to docker hub
+
+    $ docker login
+
+    $ docker push <image name>
+
+Get the layer history of an image
+
+    $ docker history <image name>
+
+Use dive to get a better description of the history
+
+    https://github.com/wagoodman/dive
 
 ## Docker compose
 
