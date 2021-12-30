@@ -109,6 +109,8 @@ List the images
 
     $ docker image ls
 
+    $ docker images
+
 Pull an image from the repository
 
     $ docker pull <image name>:<tag>
@@ -153,6 +155,22 @@ Get the layer history of an image
 Use dive to get a better description of the history
 
     https://github.com/wagoodman/dive
+
+List networks
+
+    $ docker network ls
+
+Create a network interface
+
+    $ docker network create --attachable <network name>
+
+Inspect a network interface
+
+    $ docker network inspect <network name>
+
+Remove a network interface
+
+    $ docker network rm <network name>
 
 ## Docker compose
 
