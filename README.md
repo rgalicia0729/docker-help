@@ -185,3 +185,30 @@ Stop containers
 Containers status with docker compose
 
     $ docker-compose ps
+
+## Kubectl commands
+
+Get cluster information
+
+    $ kubectl cluster-info
+
+Feed a config file to kubectl
+
+    $ kubectl apply -f <filename>
+
+Print the status of all running pods
+
+    $ kubectl get pods
+
+Print the status of all running services
+
+    $ kubectl get services
+
+Get detailed info about an object
+
+    $ kubectl describe <object type> <object name>
+
+Remove an object
+
+    $ kubectl delete -f <config file>
+
