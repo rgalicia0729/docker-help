@@ -212,3 +212,16 @@ Remove an object
 
     $ kubectl delete -f <config file>
 
+    $ kubectl delete <object type> <object name>
+
+Imperative commnad to update image
+
+    $ kubectl set image <object type>/<object name> <container name>=<new image to use>
+
+Creating a secret
+
+    $ kubectl create secret generic <secret name> --from-literal <key>=<value>
+
+Get secrets
+
+    $ kubectl get secrets
