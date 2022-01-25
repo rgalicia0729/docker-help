@@ -1,0 +1,19 @@
+{
+  "name": "worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "rgalicia0729",
+  "license": "MIT",
+  "dependencies": {
+    "redis": "^4.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

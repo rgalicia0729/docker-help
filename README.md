@@ -225,3 +225,8 @@ Creating a secret
 Get secrets
 
     $ kubectl get secrets
+
+## We are using ingress-nginx
+
+https://kubernetes.github.io/ingress-nginx/
+
